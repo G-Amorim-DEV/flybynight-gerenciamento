@@ -2,6 +2,7 @@
 
 ## Projeto: Fly By Night - Gerenciamento de Estoque
 
+``` SQL
 CREATE DATABASE flybynight_amorim CHARACTER SET utf8mb4;
-
+```
 
