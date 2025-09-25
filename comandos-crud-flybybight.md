@@ -4,6 +4,8 @@
 #### R -> READ -> SELECT (SELECIONAR/CONSULTAR/OBTER)
 #### U -> UPDATE -> UPDATE -> (ATUALIZAR/MODIFICAR)
 #### D -> DELETE -> DELETE -> (DELETAR/EXCLUIR)
+#### SET -> Definir
+#### VALUES -> Valores
 
 
 # Inserindo fornecedores
@@ -70,3 +72,21 @@ INSERT INTO lojas_produtos (produto_id, loja_id, estoque) VALUES
     (2, 1, 15),
     (1, 4, 5);
 ```
+
+# Atualizando registro
+
+```SQL
+UPDATE fornecedores SET nome = 'Distribuidora XYZ'
+WHERE id = 3;
+```
+
+```SQL
+UPDATE produtos SET preco_de_venda = 2600.77, quantidade = 15
+WHERE id = 1;
+
+UPDATE produtos SET preco_de_venda = 125 WHERE fornecedor_id = 4;
+
+UPDATE lojas_produtos set estoque = 7 
+WHERE loja_id = 4 AND produto_id = 1;
+```
+
