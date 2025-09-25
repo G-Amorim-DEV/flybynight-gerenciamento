@@ -1,0 +1,72 @@
+# Comandos CRUD para o projeto Fly By Night
+
+#### C -> CREATE -> INSERT (INSERIR/CADASTRAR)
+#### R -> READ -> SELECT (SELECIONAR/CONSULTAR/OBTER)
+#### U -> UPDATE -> UPDATE -> (ATUALIZAR/MODIFICAR)
+#### D -> DELETE -> DELETE -> (DELETAR/EXCLUIR)
+
+
+# Inserindo fornecedores
+```SQL
+INSERT INTO fornecedores (nome) VALUES ('Eletrônicos Tabajara');
+
+INSERT INTO fornecedores (nome) VALUES 
+('Games ABCD'),
+('Supermercado Tem de Tudo'),
+('Livraria Demais da Conta');
+```
+
+# Inserindo produtos
+
+```SQL
+INSERT INTO produtos(nome_produto, descricao, preco_de_venda, quantidade, fornecedor_id)
+VALUES(
+    'Smartphone Galaxy S23',
+    'Equipamento com sistema Android e câmera Full HD',
+    1599.50,
+    20,
+    1
+);
+```
+
+``` SQL
+INSERT INTO produtos(nome_produto, descricao, preco_de_venda, quantidade, fornecedor_id)
+VALUES(
+    'TV Led',
+    'Tela de 50 polegadas, resolução 4K, 4 entradas HDMI e etc e tal',
+    3420,
+    12,
+    1
+);
+```
+
+``` SQL
+INSERT INTO produtos(nome_produto, descricao, preco_de_venda, quantidade, fornecedor_id)
+VALUES(
+    'Senhor dos Anéis: As Duas Torres',
+    'Volume 2 da série de livros criados pelo autor J.R.R. Tolkien',
+    80.99,
+    100,
+    4
+);
+```
+
+# Inserindo Lojas
+
+``` SQL
+INSERT INTO lojas (nome_loja) VALUES 
+('Casas Bahia'),
+('Shopping Zona Leste'),
+('Bazar das Coisas'),
+('Americanas');
+```
+
+# Inserindo Estoque para cada loja
+
+``` SQL
+INSERT INTO lojas_produtos (produto_id, loja_id, estoque) VALUES
+    (2, 4, 7), 
+    (3, 4, 35),
+    (2, 1, 15),
+    (1, 4, 5);
+```

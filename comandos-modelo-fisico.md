@@ -37,22 +37,22 @@ CREATE TABLE produtos(
 -- Criação da tabela de lojas_produtos 
 CREATE TABLE lojas_produtos(
     estoque INT NOT NULL,
-
+    produto_id INT NOT NULL,
+    loja_id INT NOT NULL, 
     -- Ao tentar excluir um produto, se este produto está sendo
     -- usado em algum registro de estoque, Não PODEMOS PERMITIR
     -- a exclusão [isso ja é padrão]
-    produto_id INT NOT NULL, 
-    FOREIGN KEY (produto_id) REFERENCES produto(id) ON DELETE RESTRICT,
+    -- Criando uma CHAVE PRIMÁRIA COMPOSTA, ou seja,
+    -- baseada em mais de uma coluna/campo
+
+    PRIMARY KEY (produto_id, loja_id),
+    FOREIGN KEY (produto_id) REFERENCES produtos(id) ON DELETE RESTRICT,
 
     -- Se na tabela de loja uma loja for excluida,
     -- aqui na tabela loja_produtos TODOS os REGISTROS de estoque
     -- desta loja excluida TAMBÉM SERÃO EXCLUIDOS
-    lojas_id INT NOT NULL, 
-    FOREIGN KEY (lojas_id) REFERENCES lojas(id) ON DELETE CASCADE,
-
-    -- Criando uma CHAVE PRIMÁRIA COMPOSTA, ou seja,
-    -- baseada em mais de uma coluna/campo
-    PRIMARY KEY (produto_id, loja_id)
+     
+    FOREIGN KEY (loja_id) REFERENCES lojas(id) ON DELETE CASCADE
 );
 ```
 
